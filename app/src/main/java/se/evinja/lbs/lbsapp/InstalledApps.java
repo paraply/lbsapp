@@ -16,7 +16,7 @@ public class InstalledApps {
         PackageManager packageManager  = context.getPackageManager();
         List<ApplicationInfo> listApps =  packageManager.getInstalledApplications(PackageManager.GET_META_DATA);
         for (ApplicationInfo a : listApps){
-            Log.i("APP", "Package: " + a.packageName + " " + a.uid);
+            Log.i("APP",  "UID: " +  a.uid + "\tPackage: " + a.packageName );
         }
     }
 
