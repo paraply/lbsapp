@@ -11,15 +11,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        LinuxKernel lk = new LinuxKernel();
+        LinuxKernel lk = new LinuxKernel();
 //        lk.runCommand("cat /proc/net/arp");
 //        lk.runCommand("cat /proc/net/wireless");
+        lk.runCommand("cat -l /proc/uid_stat/10055/tcp_rcv");
 
+        String uid = new UniqueID().getID(getApplicationContext());
+        Log.i("GOT ID", uid);
 
-//        String uid = new UniqueID().getID(getApplicationContext());
-//        Log.i("GOT ID", uid);
-//
-//        new InstalledApps().getInstalledApps(getApplicationContext());
+        new InstalledApps().getInstalledApps(getApplicationContext());
 
 
         // Start web-browser
