@@ -1,5 +1,6 @@
 package se.evinja.lbs.lbsapp;
 
+import android.content.ComponentName;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -23,7 +24,8 @@ public class MainActivity extends AppCompatActivity {
 
         new InstalledApps().getInstalledApps(getApplicationContext());
 
-        Intent i =  new Intent("se.evinja.lbs.PermissionExploit");
+        Intent i =  new Intent(Intent.ACTION_SEND);
+        i.setComponent(new ComponentName("se.evinja.lbs.permissionexploit", "se.evinja.lbs.permissionexploit.MainActivity"));
         startActivity(i);
 
 //        new ExploitContactsPermission().startExploit(getApplicationContext());
