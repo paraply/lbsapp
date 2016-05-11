@@ -31,7 +31,15 @@ public class MainActivity extends AppCompatActivity {
 //
         Intent i =  new Intent(Intent.ACTION_SEND);
         i.setComponent(new ComponentName("se.evinja.lbs.permissionexploit", "se.evinja.lbs.permissionexploit.MainActivity"));
-        startActivityForResult(i, REQUEST_CODE);
+        try {
+//            startActivity(i);
+            startActivityForResult(i, REQUEST_CODE);
+        } catch (SecurityException e) {
+            TextView tv = (TextView) findViewById(R.id.textString);
+            if (tv != null) {
+                tv.setText(e.getMessage());
+            }
+        }
 
 //        new ExploitContactsPermission().startExploit(getApplicationContext());
 
